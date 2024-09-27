@@ -1,9 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import InputCharacter from "../../components/input-character/InputCharacter";
 import Header from "../../sections/header/Header";
 
-export const Main = () => {
+export const MainPage = () => {
   const navigate = useNavigate();
   return (
     <div>
