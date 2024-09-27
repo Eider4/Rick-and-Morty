@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SelectSort from "../select-sort/SelectSort";
+import { Lupa_icon } from "../../assets/icons/Icons";
 
 const InputCharacter = () => {
   const [input, setInput] = useState("");
@@ -66,8 +67,16 @@ const InputCharacter = () => {
             placeholder="Search character"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            className="border-2 border-gray-600 p-3 rounded-md w-full max-w-xs bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400 transition duration-200"
+            style={{ borderRight: "none", borderRadius: "1em 0em 0em 1em " }}
+            className=" border-gray-600 p-3 w-full max-w-xs bg-gray-800 text-cyan-400 focus:outline-none  transition duration-200"
           />
+          <button
+            style={{ borderRight: "none", borderRadius: "0em 1em 1em 0em " }}
+            className="bg-gray-800  p-2 hover:bg-cyan-400"
+            type="submit"
+          >
+            <Lupa_icon />
+          </button>
         </form>
 
         {active && characters.length > 0 && (
