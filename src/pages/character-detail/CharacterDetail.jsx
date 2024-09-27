@@ -39,7 +39,7 @@ const CharacterDetail = () => {
 
   return (
     <>
-      <div className="overflow-y-auto  fixed inset-0 flex items-center justify-center p-4 bg-black bg-opacity-90 z-50">
+      <div className="overflow-y-auto left-0 absolute top-0  flex items-center justify-center p-4 bg-black bg-opacity-90 z-50">
         <div className="relative bg-gradient-to-br from-indigo-900 via-purple-700 to-blue-800 p-6 rounded-3xl shadow-2xl max-w-3xl w-full text-white grid grid-cols-1 md:grid-cols-2 gap-6 overflow-hidden border-4 border-purple-600">
           <button
             onClick={() => navigate(-1)}
