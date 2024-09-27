@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html {
+  background-color: #111827;
+}
+@font-face {
+  font-family: Hatch;
+  src: url(./assets/Hatch.ttf);
+}
+.Hatch {
+  font-family: Hatch !important;
+}
