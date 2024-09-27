@@ -14,7 +14,7 @@ export const MainPage = () => {
           src="https://cdn11.bigcommerce.com/s-pssykari/images/stencil/1640x1080/products/3856/84439/rick-morty-dabpadz__38603.1567811827.png?c=2&imbypass=on"
           alt="rick and morty"
         />
-        <div className="mt-4 text-gray-300 text-center max-w-md">
+        <div className="mt-5 text-gray-300 text-center max-w-md">
           <p className="text-lg text-white mb-5">
             <span className="text-green-400">Rick and Morty</span> is an
             animated series created by
