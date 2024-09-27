@@ -51,18 +51,13 @@ const InputCharacter = () => {
     }
   };
 
-  const closePopup = (e) => {
-    if (e.target.id === "overlay") setActive(false);
-  };
-
   return (
     <>
       {active && (
         <div
-          id="overlay"
-          onClick={closePopup}
-          className="fixed inset-0 bg-black bg-opacity-50 z-10"
-        />
+          onClick={() => setActive(!active)}
+          className="fixed inset-0 bg-black  z-10"
+        ></div>
       )}
       <div className="text-white relative z-20">
         <form onSubmit={handleSubmit} className="mb-8 flex justify-center">
@@ -78,6 +73,7 @@ const InputCharacter = () => {
         {active && characters.length > 0 && (
           <div className="fixed top-20 left-0 w-full p-4 z-20 h-96">
             <SelectSort characters={characters} setCharacters={setCharacters} />
+            <p onClick={() => setActive(!active)}>X</p>
             <div
               className="flex justify-around max-w-[100%] flex-wrap gap-4 overflow-y-auto max-h-[80vh] p-4 bg-gray-900 rounded-md"
               style={{ zIndex: "2" }}

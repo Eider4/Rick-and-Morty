@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import useStoreFavoriteCharacters from "../../store/manageFavoriteCharacters";
-import { HeartFilled, HeartOutline } from "../../assets/icons/Icons";
 import IsFavorite from "../../components/is-favorite/IsFavorite";
 
 const CharacterDetail = () => {
