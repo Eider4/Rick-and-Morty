@@ -18,7 +18,7 @@ const Header = () => {
       className="relative shadow-none"
     >
       <div
-        className="flex flex-col md:flex-row max-w-6xl mx-auto items-center justify-between bg-gradient-to-r from-[#005C3B] to-[#3BFF3B]" // Color del header original
+        className="flex flex-col md:flex-row w-full  items-center justify-between bg-gradient-to-r from-[#005C3B] to-[#3BFF3B]" // Color del header original
       >
         <div className="flex text-white text-4xl mb-4 md:mb-0 gap-5">
           <Link
@@ -65,7 +65,7 @@ const Header = () => {
           </p>
         </nav>
 
-        <div className="mt-5 md:mt-0">
+        <div className="mt-5 md:mt-0 p-4">
           <InputCharacter />
         </div>
       </div>
