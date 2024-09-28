@@ -2,12 +2,17 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SelectSort from "../select-sort/SelectSort";
 import { Lupa_icon } from "../../assets/icons/Icons";
+import CardCharacterInput from "../card-character-input/CardCharacterInput";
+import useStoreSearchCharacters from "../../store/manageSearchCharacters";
 
 const InputCharacter = () => {
   const [input, setInput] = useState("");
   const [characters, setCharacters] = useState([]);
   const [active, setActive] = useState(false);
-
+  const charactersSearchNew = useStoreSearchCharacters(
+    (state) => state.charactersSearchNew
+  );
+  const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     const query = `
@@ -31,36 +36,23 @@ const InputCharacter = () => {
       body: JSON.stringify({ query }),
     });
     const { data } = await response.json();
-    setCharacters(data.characters.results);
-    setActive(true);
+    charactersSearchNew(data.characters.results);
+    navigate("/search");
   };
-
-  const navigate = useNavigate();
 
   useEffect(() => {
     if (!input || input === "") setActive(false);
   }, [input]);
-
-  const getStatusColor = (status) => {
-    switch (status) {
-      case "Alive":
-        return "bg-green-500";
-      case "Dead":
-        return "bg-red-500";
-      default:
-        return "bg-yellow-500";
-    }
-  };
 
   return (
     <>
       {active && (
         <div
           onClick={() => setActive(!active)}
-          className="fixed inset-0 bg-black  z-10"
+          className="fixed inset-0 bg-[#00000099]  z-40"
         ></div>
       )}
-      <div className="text-white relative z-20">
+      <div className="text-white relative z-50">
         <form onSubmit={handleSubmit} className="mb-8 flex justify-center">
           <input
             type="text"
@@ -79,43 +71,9 @@ const InputCharacter = () => {
           </button>
         </form>
 
-        {active && characters.length > 0 && (
-          <div className="fixed top-20 left-0 w-full p-4 z-20 h-96">
-            <SelectSort characters={characters} setCharacters={setCharacters} />
-            <p onClick={() => setActive(!active)}>X</p>
-            <div
-              className="flex justify-around max-w-[100%] flex-wrap gap-4 overflow-y-auto max-h-[80vh] p-4 bg-gray-900 rounded-md"
-              style={{ zIndex: "2" }}
-            >
-              {characters.map((character) => (
-                <div
-                  key={character.id}
-                  onClick={() => navigate(`/character/${character.id}`)}
-                  className="flex flex-col items-center w-48 p-4 border rounded-md shadow-lg bg-gray-800 hover:bg-gray-700 cursor-pointer transition-all duration-300 transform hover:scale-105"
-                >
-                  <img
-                    src={character.image}
-                    alt={character.name}
-                    className="w-24 h-24 object-cover rounded-full mb-2"
-                  />
-                  <div className="flex items-center justify-center">
-                    <h2 className="text-lg font-semibold mb-1 text-center">
-                      {character.name}
-                    </h2>
-                  </div>
-                  <p className="text-sm text-gray-400">
-                    <span
-                      className={`inline-block w-3 h-3 rounded-full mr-2 ${getStatusColor(
-                        character.status
-                      )}`}
-                    />
-                    {character.status}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
+        {/* {active && characters.length > 0 && (
+          
+        )} */}
       </div>
     </>
   );

@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 export const HeartOutline = ({ color = "currentColor", size = "30px" }) => {
   return (
     <svg
@@ -41,8 +43,10 @@ export const HeartFilled = ({
   );
 };
 export const Inicio_icon = () => {
+  const navigate = useNavigate();
   return (
     <svg
+      onClick={() => navigate("/")}
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"

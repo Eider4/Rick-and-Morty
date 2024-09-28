@@ -14,7 +14,7 @@ export default function SelectSort({ setCharacters, characters }) {
     <div style={{ zIndex: "2" }} className="flex justify-center mb-8">
       <select
         onChange={handleSelect}
-        className="p-2 bg-gray-800 text-white border-2 border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-400 transition duration-200"
+        className="p-2 bg-green-800 text-white border-2 border-green-600 rounded-md focus:outline-none focus:ring-2 focus:ring-[#38F83B] hover:bg-green-700 hover:border-green-500 transition duration-200"
       >
         <option value="a_z">Sort A-Z</option>
         <option value="z-a">Sort Z-A</option>

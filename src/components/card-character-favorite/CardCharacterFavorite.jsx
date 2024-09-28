@@ -1,17 +1,8 @@
-import useStoreFavoriteCharacters from "../../store/manageFavoriteCharacters";
+import { useNavigate } from "react-router-dom";
+import useStoreFavoriteCharacters from "../../store/manageSearchCharacters";
+import { getStatusColor } from "../../utils/getStatusColor";
 import IsFavorite from "../is-favorite/IsFavorite";
 
-// Función para cambiar el color según el estado del personaje
-const getStatusColor = (status) => {
-  switch (status) {
-    case "Alive":
-      return "bg-green-500";
-    case "Dead":
-      return "bg-red-500";
-    default:
-      return "bg-yellow-500";
-  }
-};
 export const CardCharacterFavorite = ({ character }) => {
   const {
     id,
@@ -28,18 +19,22 @@ export const CardCharacterFavorite = ({ character }) => {
 
   const date = new Date(created).toLocaleDateString();
   const time = new Date(created).toLocaleTimeString();
+  const navigate = useNavigate();
 
   return (
-    <div className="p-4 bg-gray-800 text-white rounded-lg shadow-lg max-w-md mx-auto">
+    <div
+      onClick={() => navigate(`/character/${character.id}`)}
+      className="p-4 bg-gray-900 text-white rounded-lg shadow-xl max-w-md mx-auto border-4 border-green-500 hover:border-[#38F83B] hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+    >
       <div className="flex flex-col items-center mb-4">
         <img
-          className="w-32 h-32 object-cover rounded-full mb-4"
+          className="w-32 h-32 object-cover rounded-full mb-4 border-4 border-green-600 shadow-lg"
           src={image}
           alt={name}
         />
-        <h1 className="text-3xl font-bold">{name}</h1>
-        <p className="text-lg">
-          {species} - {type}
+        <h1 className="text-3xl font-bold text-[#38F83B]">{name}</h1>
+        <p className="text-lg text-green-300">
+          {species} {type && `- ${type}`}
         </p>
         <p
           className={`px-4 py-2 rounded-full mt-2 text-sm font-semibold ${getStatusColor(
@@ -50,24 +45,21 @@ export const CardCharacterFavorite = ({ character }) => {
         </p>
       </div>
       <IsFavorite character={character} />
-      <div className="border-t border-gray-700 pt-4">
+      <div className="border-t border-green-500 pt-4 mt-4">
         <p>
           <b>ID:</b> {id}
         </p>
         <p>
-          <b>Género:</b> {gender}
+          <b>Gender:</b> {gender}
         </p>
         <p>
-          <b>Ubicación:</b> {location.name}
+          <b>Location:</b> {location.name}
         </p>
         <p>
-          <b>Origen:</b>{" "}
-          <a href={origin.url} className="text-blue-400 underline">
-            {origin.name}
-          </a>
+          <b>Origin:</b> {origin.name}
         </p>
         <p>
-          <b>Creado:</b> {date} a las {time}
+          <b>Created:</b> {date} at {time}
         </p>
       </div>
     </div>

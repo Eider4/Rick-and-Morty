@@ -1,6 +1,6 @@
 import { CardCharacterFavorite } from "../../components/card-character-favorite/CardCharacterFavorite";
 import Header from "../../sections/header/Header";
-import useStoreFavoriteCharacters from "../../store/manageFavoriteCharacters";
+import useStoreFavoriteCharacters from "../../store/manageSearchCharacters";
 
 const Favorites = () => {
   const favoriteCharacters = useStoreFavoriteCharacters(

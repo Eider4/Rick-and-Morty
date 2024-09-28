@@ -11,3 +11,56 @@ html {
 .Hatch {
   font-family: Hatch !important;
 }
+.center-div {
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.center-div2 {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bg-gradient-to-t {
+  background: linear-gradient(to top, #6b46c1, #9f7aea, #667eea);
+}
+
+.bg-gradient-to-b {
+  background: linear-gradient(to bottom, #667eea, #9f7aea, #6b46c1);
+}
+
+* {
+  --sb-track-color: #1b2831;
+  --sb-thumb-color: #00c853;
+  --sb-size: 12px;
+  --sb-thumb-hover-color: #a1ffce;
+  --sb-thumb-border-color: #03dac5;
+}
+
+*::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 8px;
+  border: 2px solid var(--sb-thumb-border-color);
+  transition: background-color 0.3s ease-in-out;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--sb-thumb-hover-color);
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  * {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+    scrollbar-width: var(--sb-size);
+  }
+}

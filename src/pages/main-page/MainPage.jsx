@@ -9,7 +9,7 @@ export const MainPage = () => {
       <Header />
       <div className="flex flex-col justify-center items-center">
         <img
-          className="w-56"
+          className="w-56 cursor-pointer"
           onClick={() => navigate("/pages/1")}
           src="https://cdn11.bigcommerce.com/s-pssykari/images/stencil/1640x1080/products/3856/84439/rick-morty-dabpadz__38603.1567811827.png?c=2&imbypass=on"
           alt="rick and morty"
