@@ -13,7 +13,10 @@ const Header = () => {
   };
 
   return (
-    <header className="relative shadow-none">
+    <header
+      onMouseLeave={() => setCategories(false)}
+      className="relative shadow-none"
+    >
       <div
         className="flex flex-col md:flex-row max-w-6xl mx-auto items-center justify-between bg-gradient-to-r from-[#005C3B] to-[#3BFF3B]" // Color del header original
       >
@@ -120,6 +123,10 @@ const Header = () => {
 
       {/* Sección de subcategorías */}
       <div>
+        {/* <div
+          style={{ transform: "translate(-50% ,-50%" }}
+          className="fixed top-[50%] left-[50%] bg-[#0005] w-full h-full"
+        ></div> */}
         <div
           className={`transform transition-all duration-500 ease-in-out ${
             categories ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
