@@ -51,12 +51,36 @@ export const MainPage = () => {
           height="315"
           src="https://www.youtube.com/embed/E8cXKMR9a1Q?si=v4azyAnBn9LhrYLE"
           title="YouTube video player"
-          frameborder="0"
+          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
         ></iframe>
       </div>
+      <p className="text-center mt-8 mb-8">
+        <b className="text-green-400">Repositorio: </b>
+        <a
+          href="https://github.com/Eider4/Rick-and-Morty.git"
+          className="text-green-300 hover:text-green-400 underline hover:no-underline transition duration-200 "
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          https://github.com/Eider4/Rick-and-Morty.git
+        </a>
+        <p className="text-green-400 text-center mt-8 mb-8">
+          {" "}
+          My{" "}
+          <a
+            href="https://github.com/Eider4"
+            className="text-green-300 hover:text-green-400 underline transition duration-200"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {" "}
+            GitHub
+          </a>
+        </p>
+      </p>
     </div>
   );
 };
