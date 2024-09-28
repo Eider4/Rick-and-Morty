@@ -60,7 +60,7 @@ const InputCharacter = () => {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             style={{ borderRight: "none", borderRadius: "1em 0em 0em 1em " }}
-            className=" border-gray-600 p-3 w-full max-w-xs bg-gray-800 text-cyan-400 focus:outline-none  transition duration-200"
+            className=" border-gray-600 p-3 w-full max-w-xs bg-gray-800 text-[#ffe135] focus:outline-none  transition duration-200"
           />
           <button
             style={{ borderRight: "none", borderRadius: "0em 1em 1em 0em " }}
