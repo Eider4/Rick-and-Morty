@@ -76,14 +76,30 @@ const CharacterDetail = () => {
               <b>Type:</b> {character.type}
             </p>
           )}
-          <p className="text-lg">
+
+          <p
+            className="text-lg hover:text-orange-500 cursor-pointer "
+            onClick={() => {
+              const g = character.location.url.split("/");
+              if (!g) return;
+              navigate(`/location/${g[g.length - 1]}`);
+            }}
+          >
             <b>Location:</b> {character.location?.name}
           </p>
-          <p className="text-lg">
-            <b>Origin:</b> {character.origin?.name}
-          </p>
+
           <p className="text-lg">
             <b>Created:</b> {date} at {time}
+          </p>
+          <p
+            onClick={() => {
+              const g = character.origin.url.split("/");
+              if (!g) return;
+              navigate(`/location/${g[g.length - 1]}`);
+            }}
+            className="text-lg hover:text-orange-500 cursor-pointer"
+          >
+            <b>Origin:</b> {character.origin?.name}
           </p>
         </div>
 
@@ -100,7 +116,7 @@ const CharacterDetail = () => {
                   className="cursor-pointer text-green-400 hover:text-green-300 underline"
                   key={f[f.length - 1]}
                 >
-                  Episode {f[f.length - 1] + 1}
+                  Episode {f[f.length - 1]}
                 </li>
               );
             })}

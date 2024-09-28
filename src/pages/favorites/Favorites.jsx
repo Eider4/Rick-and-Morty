@@ -1,6 +1,6 @@
 import { CardCharacterFavorite } from "../../components/card-character-favorite/CardCharacterFavorite";
 import Header from "../../sections/header/Header";
-import useStoreFavoriteCharacters from "../../store/manageFavoriteCharacters copy";
+import useStoreFavoriteCharacters from "../../store/manageFavoriteCharacters";
 
 const Favorites = () => {
   const favoriteCharacters = useStoreFavoriteCharacters(
@@ -11,7 +11,7 @@ const Favorites = () => {
     <>
       <Header />
       {favoriteCharacters && favoriteCharacters.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-10">
+        <div className="flex justify-around flex-wrap gap-4 mt-10">
           {favoriteCharacters.map((character) => (
             <CardCharacterFavorite key={character.id} character={character} />
           ))}

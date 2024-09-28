@@ -9,7 +9,7 @@ export default function CardCharacterInput({ character }) {
     <div
       key={character.id}
       onClick={() => navigate(`/character/${character.id}`)}
-      className="flex flex-col items-center w-48 h-52 p-4 border-4 border-green-500 rounded-lg shadow-xl bg-gray-900 hover:bg-gray-800 cursor-pointer transition-all duration-300 transform hover:scale-105 hover:border-[#38F83B]"
+      className="flex flex-col items-center max-w-64   h-64 p-4 border-4 border-green-500 rounded-lg shadow-xl bg-gray-900 hover:bg-gray-800 cursor-pointer transition-all duration-300 transform hover:scale-105 hover:border-[#38F83B]"
     >
       <img
         src={character.image}

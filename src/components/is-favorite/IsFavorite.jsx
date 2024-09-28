@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import useStoreFavoriteCharacters from "../../store/manageFavoriteCharacters copy";
+import useStoreFavoriteCharacters from "../../store/manageFavoriteCharacters";
 import { HeartFilled, HeartOutline } from "../../assets/icons/Icons";
 
 function IsFavorite({ character, size }) {

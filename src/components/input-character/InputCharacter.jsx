@@ -64,10 +64,10 @@ const InputCharacter = () => {
           />
           <button
             style={{ borderRight: "none", borderRadius: "0em 1em 1em 0em " }}
-            className="bg-gray-800  p-2 hover:bg-cyan-400"
+            className="bg-gray-800  p-2 hover:bg-[#ffe135]"
             type="submit"
           >
-            <Lupa_icon />
+            <Lupa_icon className="size-7 w-7 h-[2.2rem]  hover:text-[#000]" />
           </button>
         </form>
 

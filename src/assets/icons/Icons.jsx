@@ -62,7 +62,7 @@ export const Inicio_icon = () => {
     </svg>
   );
 };
-export const Lupa_icon = () => {
+export const Lupa_icon = ({ className = "size-7 w-7 h-[2.2rem] #eee" }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -70,8 +70,7 @@ export const Lupa_icon = () => {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="size-7 w-7 h-[2.2rem]"
-      style={{ color: "#eee" }}
+      className={className}
     >
       <path
         strokeLinecap="round"
