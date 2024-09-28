@@ -24,7 +24,7 @@ export const CardCharacterFavorite = ({ character }) => {
   return (
     <div
       onClick={() => navigate(`/character/${character.id}`)}
-      className="p-4 bg-gray-900 text-white rounded-lg shadow-xl max-w-md mx-auto border-4 border-green-500 hover:border-[#38F83B] hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+      className="cursor-pointer  p-4 bg-gray-900 text-white rounded-lg shadow-xl max-w-md mx-auto border-4 border-green-500 hover:border-[#38F83B] hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
     >
       <div className="flex flex-col items-center mb-4">
         <img

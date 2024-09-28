@@ -58,7 +58,7 @@ export const MainPage = () => {
         ></iframe>
       </div>
       <p className="text-center mt-8 mb-8">
-        <b className="text-green-400">Repositorio: </b>
+        <b className="text-green-400">Repository: </b>
         <a
           href="https://github.com/Eider4/Rick-and-Morty.git"
           className="text-green-300 hover:text-green-400 underline hover:no-underline transition duration-200 "
