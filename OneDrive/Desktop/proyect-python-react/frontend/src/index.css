@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.bg_claro:hover {
+  background-color: #F2EFFF
+}
+
+.bg_oscuro:hover {
+  background-color: rgb(52, 52, 52);
+}
